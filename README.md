@@ -18,9 +18,10 @@ Make sure the following are installed:
 - [Docker](https://docs.docker.com/get-docker/)
 - [Ollama](https://ollama.com/download)
 
-And make sure you run:
-# Run this to build the FAISS index
+And make sure you run this to build the FAISS index:
+
 build-index:
+
 	python scripts/populate_embeddings.py
 
 with:
@@ -111,7 +112,7 @@ Currently configured for local use.
 ## 7. Author
 Yongzhen Zhang
 
-GitHub: zhangyongzhen99
+GitHub: https://github.com/yongzhenzh
 
 LinkedIn: https://www.linkedin.com/in/yongzhen-zhang-291557239/
 
