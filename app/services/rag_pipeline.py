@@ -7,7 +7,7 @@ generate context for answering user queries.
 
 from app.services.vector_store import search_similar_docs
 from app.services.get_user_context import get_user_context
-from app.services.generator import call_local_llm
+from app.services.generator import call_llm
 
 
 def build_combined_context(user_id: str, query: str, top_k: int = 3) -> str:
@@ -61,4 +61,4 @@ def generate_answer(
         + history
         + [{"role": "user", "content": query}]
     )
-    return call_local_llm(messages)
+    return call_llm(messages)

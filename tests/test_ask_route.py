@@ -5,7 +5,7 @@ from unittest.mock import patch
 client = TestClient(app)
 
 
-@patch("app.services.rag_pipeline.call_local_llm")
+@patch("app.services.rag_pipeline.call_llm")
 def test_ask_question(mock_llm_call):
     """
     Test the /ask endpoint to ensure it correctly processes a question and returns an answer.

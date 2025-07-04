@@ -61,6 +61,9 @@
         <li>migraine</li>
         <li>schizophrenia</li>
         <li>vitamin B12 deficiency</li>
+        <li>asthma</li>
+        <li>hypertension</li>
+        <li>pregnancy</li>
       </ul>
     </div>
   </div>

@@ -5,11 +5,15 @@ It sends a prompt to the LLM and returns the generated response."""
 import os
 import requests
 from typing import List, Dict
+from dotenv import load_dotenv
+load_dotenv()
 
 
-def call_local_llm(messages: List[Dict[str, str]]) -> str:
+
+
+def call_llm(messages: List[Dict[str, str]]) -> str:
     """
-    Call the local LLM API with the given message history (multi-turn).
+    Call either the local Ollama LLM or the online DeepSeek API based on env config.
 
     Args:
         messages (List[Dict[str, str]]): List of messages with role and content.
@@ -19,14 +23,44 @@ def call_local_llm(messages: List[Dict[str, str]]) -> str:
     """
 
     print(">>> LLM received messages:", messages)
-    LLM_API_URL = os.getenv("LLM_URL", "http://localhost:11434/api/chat")
 
-    payload = {
-        "model": "llama3",
-        "messages": messages,
-        "stream": False,
-    }
+    use_online = os.getenv("USE_ONLINE_LLM", "true").lower() == "true"
 
-    response = requests.post(LLM_API_URL, json=payload)
-    response.raise_for_status()
-    return response.json()["message"]["content"]
+    if use_online:
+        # Call the online API (by default, DeepSeek)
+        api_key = os.getenv("DEEPSEEK_API_KEY")
+        if not api_key:
+            raise ValueError("Missing DEEPSEEK_API_KEY in environment variables.")
+        
+
+        headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json"
+        }
+
+        payload = {
+            "model": "deepseek-chat",
+            "messages": messages,
+            "stream": False
+        }
+
+        response = requests.post(
+            "https://api.deepseek.com/v1/chat/completions",
+            headers=headers,
+            json=payload
+        )
+        response.raise_for_status()
+        return response.json()["choices"][0]["message"]["content"]
+    
+    else:
+        # Call the local Ollama LLM
+        llm_url = os.getenv("LLM_URL", "http://localhost:11434/api/chat")
+        payload = {
+            "model": "llama3",
+            "messages": messages,
+            "stream": False,
+        }
+
+        response = requests.post(llm_url, json=payload)
+        response.raise_for_status()
+        return response.json()["message"]["content"]

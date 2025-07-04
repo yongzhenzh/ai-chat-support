@@ -37,7 +37,7 @@ def test_generate_answer(monkeypatch: MonkeyPatch):
 
     # Mock the call_local_llm function to return a fixed response
     # This avoids making an actual HTTP request to the LLM API during testing
-    monkeypatch.setattr("app.services.rag_pipeline.call_local_llm", mock_llm_call)
+    monkeypatch.setattr("app.services.rag_pipeline.call_llm", mock_llm_call)
 
     query = "What are the risks of high blood pressure?"
     user_id = "u001"

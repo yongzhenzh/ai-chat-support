@@ -1,11 +1,13 @@
 from unittest.mock import patch
-from app.services.generator import call_local_llm
+from app.services.generator import call_llm
+import os
+os.environ["USE_ONLINE_LLM"] = "false" # Force local LLM for testing
 
 
 @patch("app.services.generator.requests.post")
-def test_call_local_llm(mock_post):
+def test_call_llm(mock_post):
     """
-    Test the call_local_llm function with message history.
+    Test the call_llm function with message history.
     """
     # Arrange
     mock_response = {
@@ -25,7 +27,7 @@ def test_call_local_llm(mock_post):
     ]
 
     # Act
-    response = call_local_llm(messages)
+    response = call_llm(messages)
 
     # Assert
     assert response == "This is a mocked response from the LLM."
