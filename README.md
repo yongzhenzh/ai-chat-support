@@ -126,8 +126,6 @@ Currently configured for local use.
 ## 7. Author
 Yongzhen "Michael" Zhang, MSCS student at Northeastern University
 
-School Email: zhang.yongz@northeastern.edu
-
 Personal Email: zhangyongzhen99@gmail.com
 
 GitHub: https://github.com/yongzhenzh
