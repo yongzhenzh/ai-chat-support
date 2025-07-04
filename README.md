@@ -1,9 +1,9 @@
-# AI Chat Support System
+# Medical AI Chat Support System (RAG)
 
 A full-stack AI-powered chatbot built using:
 - FastAPI backend with dual-path Retrieval-Augmented Generation (RAG)
 - [Ollama](https://ollama.com/) to run LLaMA3 locally or run it online using online LLM API (default Deepseek-chat)
-- Vite-based frontend (React or Vue)
+- Vite-based frontend (Vue)
 - FAISS + BGE Embeddings for semantic search
 - Mock user health data + medical knowledge base for personalized responses
 
