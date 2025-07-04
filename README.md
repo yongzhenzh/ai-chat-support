@@ -36,6 +36,8 @@ make build-index
 This project supports two LLM inference modes:
  1. Local mode: runs llama3 model via Ollama locally. Default (USE_ONLINE_LLM=false).
  2. Online mode: uses online API (deepseek by default), to enable, Set USE_ONLINE_LLM=true.
+---
+
 
 1. Pull or Run LLaMA3 Model with Ollama
 
