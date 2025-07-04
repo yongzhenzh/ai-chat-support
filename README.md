@@ -2,7 +2,7 @@
 
 A full-stack AI-powered chatbot built using:
 - FastAPI backend with dual-path Retrieval-Augmented Generation (RAG)
-- [Ollama](https://ollama.com/) to run LLaMA3 locally
+- [Ollama](https://ollama.com/) to run LLaMA3 locally or run it online using online LLM API (default Deepseek-chat)
 - Vite-based frontend (React or Vue)
 - FAISS + BGE Embeddings for semantic search
 - Mock user health data + medical knowledge base for personalized responses
@@ -122,7 +122,11 @@ Currently configured for local use.
 
 
 ## 7. Author
-Yongzhen Zhang
+Yongzhen "Michael" Zhang, MSCS student at Northeastern University
+
+School Email: zhang.yongz@northeastern.edu
+
+Personal Email: zhangyongzhen99@gmail.com
 
 GitHub: https://github.com/yongzhenzh
 
@@ -132,7 +136,7 @@ LinkedIn: https://www.linkedin.com/in/yongzhen-zhang-291557239/
 
 ## 8. Testing & Code Quality
 
-✅ Includes full test coverage with **Pytest**, and code linting using **Flake8** and **Black** for consistent style and quality.
+Includes full test coverage with **Pytest**, and code linting using **Flake8** and **Black** for consistent style and quality.
 
 To run tests:
 
