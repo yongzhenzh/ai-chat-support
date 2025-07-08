@@ -10,7 +10,7 @@ def test_call_llm_online_integration(mock_post):
     """
     # Set env to trigger online LLM path
     os.environ["USE_ONLINE_LLM"] = "true"
-    os.environ["DEEPSEEK_API_KEY"] = "dummy-key"
+    os.environ["LLM_API_KEY"] = "dummy-key"
 
     # Mocked DeepSeek-like API response
     mock_post.return_value.json.return_value = {

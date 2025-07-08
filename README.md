@@ -13,10 +13,23 @@ A full-stack AI-powered chatbot built using:
 
 ## 1. Prerequisites
 
+make sure to copy .env.example to the created .env file before running docker:
+
+USE_ONLINE_LLM=true
+LLM_URL=http://ollama:11434/api/chat
+LLM_API_KEY=your_api_key_here
+
+if wanting to host the LLM locally, change USE_ONLINE_LLM to false. The program will serve llama3 locally with Ollama.
+if wanting to host the LLM online, change "your_api_key_here" with your online LLM API (currently only supports DeepSeek-chat API)
+
+```bash
+cp .env.example .env
+```
+
 Make sure the following are installed:
 
 - [Docker](https://docs.docker.com/get-docker/)
-- [Ollama](https://ollama.com/download)
+- [Ollama](https://ollama.com/download) (only if serving the LLM locally)
 
 And make sure you run this to build the FAISS index:
 

@@ -28,9 +28,9 @@ def call_llm(messages: List[Dict[str, str]]) -> str:
 
     if use_online:
         # Call the online API (by default, DeepSeek)
-        api_key = os.getenv("DEEPSEEK_API_KEY")
+        api_key = os.getenv("LLM_API_KEY")
         if not api_key:
-            raise ValueError("Missing DEEPSEEK_API_KEY in environment variables.")
+            raise ValueError("Missing LLM_API_KEY in environment variables.")
         
 
         headers = {
