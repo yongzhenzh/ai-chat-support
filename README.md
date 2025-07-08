@@ -62,7 +62,7 @@ This project supports two LLM inference modes:
 
 1. Pull or Run LLaMA3 Model with Ollama
 
-Before launching the full stack, ensure the model is pulled:
+Before launching the full stack, ensure the model is pulled: **Only if you are hosting the LLM(default llama3) locally with Ollama**
 
 ```bash
 ollama pull llama3
@@ -80,9 +80,14 @@ to switch to online mode by setting USE_ONLINE_LLM=true.
 ## 3. Build and Launch Full Stack via Docker Compose
 From the root of the project:
 
-```bash
-docker-compose up --build
-```
+
+- **Online LLM** (e.g., DeepSeek API):  
+  - Set `USE_ONLINE_LLM=true` in `.env`
+  - Run: `docker-compose up --build`
+
+- **Local LLM (Ollama)**:  
+  - Set `USE_ONLINE_LLM=false` in `.env`
+  - Run: `docker-compose -f docker-compose.yml -f docker-compose.local.yml up --build`
 
 Once launched, access the services at:
 
