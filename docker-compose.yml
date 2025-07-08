@@ -15,7 +15,7 @@ services:
     environment:
       - USE_ONLINE_LLM
       - LLM_URL
-      - DEEPSEEK_API_KEY
+      - LLM_API_KEY
 
 
 

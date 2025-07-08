@@ -70,10 +70,10 @@ ollama pull llama3
 ollama run llama3
 ```
 Or
-2. Update the .env or docker-compose.yml:
+2. Update the .env or docker-compose.yml to use online mode for LLM:
 
 USE_ONLINE_LLM=true
-DEEPSEEK_API_KEY=your-api-key-here
+LLM_API_KEY=your-api-key-here
 
 to switch to online mode by setting USE_ONLINE_LLM=true.
 
