@@ -29,13 +29,3 @@ services:
     depends_on:
       - backend
 
-  ollama:
-    image: ollama/ollama
-    container_name: ollama
-    ports:
-      - "11435:11434"
-    volumes:
-      - ollama-models:/root/.ollama
-
-volumes:
-  ollama-models:
